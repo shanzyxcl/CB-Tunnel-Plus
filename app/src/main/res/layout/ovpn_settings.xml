@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_height="55dp"
+        android:layout_width="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_main"
+            android:theme="@style/ToolbarTheme"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:minHeight="?attr/actionBarSize"
+            app:titleTextAppearance="@style/ToolbarTitleTheme"
+            app:subtitleTextAppearance="@style/ToolbarSubtitleTheme" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <fragment
+        android:id="@+id/fragment_settings"
+        android:name="net.openvpn.openvpn.OpenVPNPrefs$SettingsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:context="net.openvpn.openvpn.OpenVPNPrefs" />
+</LinearLayout>

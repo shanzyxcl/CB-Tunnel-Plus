@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:gravity="right"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/color_bg"
+        android:background="@color/colorAccent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/notiftext1"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="18.0sp"
+            android:layout_marginLeft="25.0dip"
+            style="@style/TextViewTheme_dark"
+            android:layout_marginTop="30.0dip"
+            android:text="Choose your favorite color" />
+
+        <View
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="?android:dividerVertical" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_margin="10.0dip">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:id="@+id/dialog_tunnel_radio">
+
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:paddingEnd="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/card_frame"
+                    android:textSize="10dp"
+                    android:checked="true"
+                    android:id="@+id/type_light"
+                    android:text="Light mod"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:paddingEnd="10dp"
+                    android:background="@drawable/card_frame"
+                    android:textSize="10dp"
+                    android:id="@+id/type_dark"
+                    android:text="Dark mod"
+                    android:textStyle="bold" />
+
+            </RadioGroup>
+
+
+            <org.polaric.md_colorfragment.FillGridView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:horizontalSpacing="8dp"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:stretchMode="columnWidth"
+                android:clipToPadding="false"
+                android:numColumns="auto_fit"
+                android:verticalSpacing="8dp"
+                android:columnWidth="56dp"
+                android:id="@+id/grid" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_marginBottom="10.0dip"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10.0dip">
+
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="100.0dip"
+            android:id="@+id/back"
+            android:gravity="center"
+            android:padding="10.0dip"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10.0dip">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/back_tv"
+                android:letterSpacing="0.1"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="Back" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_height="40.0dip"
+            android:layout_width="150.0dip"
+            android:layout_marginEnd="10.0dip"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/card_frame3"
+            android:id="@+id/apply">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/apply_tv"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:layout_centerInParent="true"
+                android:letterSpacing="0.1"
+                android:textStyle="bold"
+                android:text="Apply" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

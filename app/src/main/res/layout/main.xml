@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_window_bg"
+    android:background="@color/windowBackground_light"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayoutMain"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/mPager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/image_4"
+                android:id="@+id/layout1">
+
+                <include layout="@layout/mtk_home"/>
+
+            </RelativeLayout>
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/image_4"
+                android:id="@+id/layout2">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/lRecyclerView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp" />
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        </androidx.viewpager.widget.ViewPager>
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_gravity="start"
+            android:id="@+id/drawerNavigationView"
+            android:background="@drawable/nav_bg_light"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            app:itemIconTint="@color/black"
+            app:itemTextAppearance="@color/black"
+            app:itemTextColor="@color/black"
+            app:menu="@menu/navigation_menu"
+            app:headerLayout="@layout/navheader">
+            <LinearLayout
+                android:gravity="bottom|center"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <TextView
+                    android:id="@+id/hidden1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="8dp"
+                    android:layout_marginBottom="10.0dip"
+                    android:text="© CB Tunnel Plus copyright 2024" />
+            </LinearLayout>
+        </com.google.android.material.navigation.NavigationView>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

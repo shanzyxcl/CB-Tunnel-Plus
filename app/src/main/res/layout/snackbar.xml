@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:gravity="center"
+    android:layout_margin="5.0dip">
+
+    <com.cbtunnel.plus.view.RoundCornerLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:topRightEnabled="true"
+        app:cornerRadius="100.0dip"
+        app:topLeftEnabled="true"
+        app:bottomLeftEnabled="true"
+        app:bottomRightEnabled="true">
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/toast_bg">
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingRight="30dp"
+                android:orientation="horizontal"
+                android:paddingBottom="5.0dip"
+                android:paddingLeft="5dp"
+                android:paddingTop="5.0dip">
+
+                <ImageView
+                    android:layout_height="40dp"
+                    android:layout_width="40dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/icon_icon" />
+
+                <View
+                    android:layout_height="0dp"
+                    android:layout_width="5.0dip" />
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="15dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:gravity="center|left"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textColor="#ff212121"
+                        android:text="This is title"
+                        android:id="@+id/itemtoastTv1"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:gravity="center|left"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:textColor="#FF727272"
+                        android:text="This is description"
+                        android:id="@+id/itemtoastTv2" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </com.cbtunnel.plus.view.RoundCornerLayout>
+
+</RelativeLayout>

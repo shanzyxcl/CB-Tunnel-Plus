@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:background="@color/transparent"
+    android:layout_weight="1.0">
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/tool_bar" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip"
+            android:id="@+id/show_random_l"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:theme="@style/ThemeOverlay.AppCompat">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="25.0dip"
+                android:layout_height="25.0dip"
+                android:src="@drawable/ic_server"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:textSize="11.0sp"
+                        android:typeface="serif"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorText"
+                        android:text="AUTO SERVER"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/montserrat_regular" />
+
+                    <TextView
+                        android:textSize="8.0sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorText"
+                        android:id="@+id/server_description"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="BEST PERFORMACE"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/montserrat_regular" />
+
+                </LinearLayout>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mSelectedItem"
+                    android:layout_width="18.0dip"
+                    android:layout_height="18.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:tint="@color/black_light"
+                    android:src="@drawable/ic_item_unselected" />
+            </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.cbtunnel.plus.view.swipe.DragListView
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:id="@+id/config_listview" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

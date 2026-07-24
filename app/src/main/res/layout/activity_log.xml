@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:background="@color/transparent"
+    android:layout_weight="1">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        android:gravity="center"
+        android:background="@color/transparent"
+        app:behavior_peekHeight="50dp"
+        android:orientation="vertical"
+        app:behavior_hideable="false"
+        android:id="@+id/log_bottom_sheet">
+
+        <View
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="@color/grey_500" />
+
+        <LinearLayout
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:background="@color/flag_iv_color_light"
+            android:gravity="center|left"
+            android:orientation="horizontal"
+            android:id="@+id/log_view"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_height="25dp"
+                android:layout_width="25dp"
+                app:tint="@color/black"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="20dp"
+                app:srcCompat="@drawable/ic_hide_set"
+                android:id="@+id/show_log_view" />
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center|left"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:scaleY="0.9"
+                    android:textSize="13sp"
+                    android:maxLines="1"
+                    android:id="@+id/status"
+                    android:text="STATUS"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_height="25dp"
+                android:layout_width="40dp"
+                android:id="@+id/status_log_menu"
+                app:tint="@color/grey_800"
+                app:srcCompat="@drawable/ic_cg"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lRecyclerView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

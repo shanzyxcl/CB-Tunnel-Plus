@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="NeomorphFrameLayout">
+        <attr name="neomorph_view_type" />
+        <attr name="neomorph_shadow_type" />
+        <attr name="neomorph_elevation" format="dimension" />
+        <attr name="neomorph_corner_radius" format="dimension" />
+        <attr name="neomorph_background_color" format="color" />
+        <attr name="neomorph_shadow_color" format="color" />
+        <attr name="neomorph_highlight_color" format="color" />
+        <attr name="neomorph_layer_type"/>
+        <attr name="neomorph_shadow_visible" format="boolean" />
+    </declare-styleable>
+    <attr name="neomorph_view_type">
+        <enum name="rectangular" value="1" />
+        <enum name="circular" value="2" />
+    </attr>
+    <attr name="neomorph_shadow_type">
+        <enum name="outer" value="1" />
+        <enum name="inner" value="2" />
+    </attr>
+    <attr name="neomorph_layer_type">
+        <enum name="software" value="1" />
+        <enum name="hardware" value="2" />
+    </attr>
+
+
+    <declare-styleable name="ListSwipeItem">
+        <attr name="swipeViewId" format="integer"/>
+        <attr name="leftViewId" format="integer"/>
+        <attr name="rightViewId" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="RoundCorner">
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="topEnabled" format="boolean" />
+        <attr name="bottomEnabled" format="boolean" />
+        <attr name="topLeftEnabled" format="boolean" />
+        <attr name="topRightEnabled" format="boolean" />
+        <attr name="bottomLeftEnabled" format="boolean" />
+        <attr name="bottomRightEnabled" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="SnakeView">
+        <attr name="strokeColor" format="color" />
+        <attr name="fillColor" format="color" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="minValue" format="float" />
+        <attr name="maxValue" format="float" />
+        <attr name="maximumNumberOfValues" format="integer" />
+        <attr name="animationDuration" format="integer" />
+        <attr name="scaleMode">
+            <enum name="fixed" value="0" />
+            <enum name="auto" value="1" />
+        </attr>
+        <attr name="chartStyle">
+            <enum name="stroke" value="0" />
+            <enum name="fill" value="1" />
+            <enum name="fill_stroke" value="2" />
+        </attr>
+    </declare-styleable>
+    <array name="server_category">
+        <item>PREMIUM</item>
+        <item>VIP</item>
+        <item>PRIVATE</item>
+    </array>
+    <array name="server_type">
+        <item>OpenVPN</item>
+        <item>SSH</item>
+        <item>SlowDns</item>
+        <item>v2ray</item>
+        <item>UDP Hysteria</item>
+    </array>
+    <array name="network_proto">
+        <item>HTTP Proxy</item>
+        <item>UDP Hysteria</item>
+        <item>SlowDns</item>
+    </array>
+    <array name="ssl_type">
+        <item>SSL/SNI</item>
+        <item>SSL+PAYLOAD</item>
+        <item>SSL+PROXY</item>
+    </array>
+    <declare-styleable name="DataGraph">
+        <attr name="dg_colorDown" format="color" />
+        <attr name="dg_colorUp" format="color" />
+        <attr name="dg_colorText" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="Graph">
+        <attr name="lineColor" format="color"/>
+        <attr name="lineUpColor" format="color"/>
+        <attr name="lineDownColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircleProgressBar">
+        <attr name="min" format="integer" />
+        <attr name="max" format="integer" />
+        <attr name="progress" format="integer" />
+        <attr name="progressbarColor" format="color" />
+        <attr name="progressBarThickness" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="RotateLoading">
+        <attr name="loading_width" format="dimension"/>
+        <attr name="loading_color" format="color"/>
+        <attr name="shadow_offset" format="dimension"/>
+        <attr name="loading_visible" format="boolean"/>
+    </declare-styleable>
+
+</resources>

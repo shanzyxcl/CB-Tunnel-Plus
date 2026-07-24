@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<com.cbtunnel.plus.view.swipe.ListSwipeItem
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	app:leftViewId="@+id/item_left"
+	app:rightViewId="@+id/item_right"
+	app:swipeViewId="@+id/item_layout">
+<LinearLayout
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:id="@+id/item_layout"
+	android:background="?attr/selectableItemBackground"
+	android:clickable="true"
+	android:focusable="true"
+	android:gravity="center_vertical"
+	android:orientation="vertical">
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="#9F616161"/>
+
+	<androidx.appcompat.widget.LinearLayoutCompat
+		android:layout_width="fill_parent"
+		android:layout_height="50.0dip"
+		android:layout_marginLeft="5dp"
+		android:layout_marginRight="5dp"
+		android:gravity="center_vertical"
+		android:orientation="horizontal"
+		android:theme="@style/ThemeOverlay.AppCompat">
+
+		<RelativeLayout
+			android:id="@+id/image"
+			android:layout_width="35dp"
+			android:layout_height="match_parent"
+			android:gravity="center"
+			android:visibility="gone">
+
+			<ImageView
+				android:layout_width="20dp"
+				android:layout_height="20dp"
+				android:src="@drawable/ic_drag" />
+		</RelativeLayout>
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/server_item_icon"
+			android:layout_width="25.0dip"
+			android:layout_height="25.0dip"
+			android:adjustViewBounds="true"
+			android:layout_marginLeft="10.0dip"
+			android:layout_marginRight="10.0dip"
+			android:padding="2dp"
+			android:src="@drawable/ic_random" />
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_vertical"
+			android:orientation="horizontal">
+
+			<LinearLayout
+				android:layout_width="0.0dip"
+				android:layout_height="wrap_content"
+				android:layout_weight="1.0"
+				android:gravity="center_vertical"
+				android:orientation="vertical">
+
+				<TextView
+					android:id="@+id/server_item_title"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/montserrat_regular"
+					android:singleLine="true"
+					android:text="Server Name"
+					android:textAllCaps="true"
+					android:textColor="@color/colorText"
+					android:textSize="11.0sp"
+					android:textStyle="bold"
+					android:typeface="serif" />
+
+				<TextView
+					android:id="@+id/server_description"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="5dp"
+					android:paddingRight="5dp"
+					android:background="@drawable/card_frame6"
+					android:fontFamily="@font/montserrat_regular"
+					android:text="@string/app_name"
+					android:textAllCaps="true"
+					android:textColor="@color/white"
+					android:textSize="10.0sp"
+					android:textStyle="bold" />
+
+			</LinearLayout>
+
+			<androidx.appcompat.widget.AppCompatImageView
+				android:id="@+id/mSelectedItem"
+				android:layout_width="18.0dip"
+				android:layout_height="18.0dip"
+				android:layout_marginLeft="10.0dip"
+				android:layout_marginRight="10.0dip"
+				android:src="@drawable/ic_item_selected"
+				android:tint="@color/dataIn" />
+		</LinearLayout>
+	</androidx.appcompat.widget.LinearLayoutCompat>
+</LinearLayout>
+
+</com.cbtunnel.plus.view.swipe.ListSwipeItem>

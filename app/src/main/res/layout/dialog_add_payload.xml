@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:paddingBottom="10dp"
+     android:layout_weight="1"
+     android:id="@+id/contain">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:layout_marginBottom="70dp"
+         android:orientation="vertical">
+
+        <LinearLayout
+             android:layout_height="50dp"
+             android:layout_width="fill_parent"
+             android:gravity="bottom"
+             android:background="@color/colorAccent"
+             android:orientation="vertical"
+             android:id="@+id/color_bg">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:layout_marginBottom="2dp"
+                 android:textSize="18.0sp"
+                 style="@style/TextViewTheme_dark"
+                 android:layout_marginStart="25.0dip"
+                 android:id="@+id/notiftext1"
+                 android:text="Network Payload" />
+
+        </LinearLayout>
+
+        <View
+             android:layout_height="2dp"
+             android:layout_width="match_parent"
+             android:background="@color/black_light" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+             android:layout_height="0dp"
+             android:layout_width="match_parent"
+             android:layout_marginTop="20.0dip"
+             android:layout_weight="1.0">
+
+            <androidx.core.widget.NestedScrollView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent">
+
+                <LinearLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="fill_parent"
+                     android:padding="10.0dip"
+                     android:orientation="vertical">
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:layout_marginBottom="3dp"
+                         android:background="@color/colorAccent"
+                         android:paddingRight="10dp"
+                         android:textColor="@color/white"
+                         android:paddingLeft="10dp"
+                         android:id="@+id/title1"
+                         android:text="Select Logo" />
+
+                    <Spinner
+                         android:layout_height="40.0dip"
+                         android:layout_width="fill_parent"
+                         android:background="@drawable/bg_spin"
+                         android:id="@+id/pLogo">
+
+                    </Spinner>
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:layout_marginBottom="3dp"
+                         android:background="@color/colorAccent"
+                         android:paddingRight="10dp"
+                         android:textColor="@color/white"
+                         android:paddingLeft="10dp"
+                         android:layout_marginTop="10.0dip"
+                         android:id="@+id/title2"
+                         android:text="Select protocol" />
+
+                    <Spinner
+                         android:layout_height="40.0dip"
+                         android:layout_width="fill_parent"
+                         android:background="@drawable/bg_spin"
+                         android:entries="@array/network_proto"
+                         android:id="@+id/proto_spin">
+
+                    </Spinner>
+
+                    <LinearLayout
+                         android:layout_height="wrap_content"
+                         android:layout_width="fill_parent"
+                         android:orientation="vertical"
+                         android:id="@+id/radio_type">
+
+                        <TextView
+                             android:layout_height="wrap_content"
+                             android:layout_width="wrap_content"
+                             android:layout_marginBottom="3dp"
+                             android:background="@color/colorAccent"
+                             android:paddingRight="10dp"
+                             android:textColor="@color/white"
+                             android:paddingLeft="10dp"
+                             android:layout_marginTop="10dp"
+                             android:id="@+id/title3"
+                             android:text="Select Server" />
+
+                        <RadioGroup
+                             android:layout_height="wrap_content"
+                             android:layout_width="fill_parent"
+                             android:background="@drawable/bg_spin"
+                             android:orientation="horizontal"
+                             android:id="@+id/server_type">
+
+                            <RadioButton
+                                 android:layout_height="wrap_content"
+                                 android:layout_width="fill_parent"
+                                 android:layout_weight="1.0"
+                                 android:id="@+id/cf_radio"
+                                 android:text="CF" />
+
+                            <RadioButton
+                                 android:layout_height="wrap_content"
+                                 android:layout_width="fill_parent"
+                                 android:layout_weight="1.0"
+                                 android:id="@+id/ws_radio"
+                                 android:text="WS" />
+
+                            <RadioButton
+                                 android:layout_height="wrap_content"
+                                 android:layout_width="fill_parent"
+                                 android:layout_weight="1.0"
+                                 android:id="@+id/http_radio"
+                                 android:text="HTTP" />
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                         android:layout_height="wrap_content"
+                         android:layout_width="fill_parent"
+                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                         android:layout_marginTop="5.0dip"
+                         android:id="@+id/TextInputLayout1">
+
+                        <EditText
+                             android:layout_height="wrap_content"
+                             android:layout_width="fill_parent"
+                             android:hint="Network Name"
+                             android:id="@+id/etNetworkName" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                         android:layout_height="wrap_content"
+                         android:layout_width="fill_parent"
+                         android:gravity="center"
+                         android:orientation="horizontal"
+                         android:layout_marginTop="5.0dip">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                             android:layout_height="wrap_content"
+                             android:layout_width="0dp"
+                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                             android:layout_weight="1"
+                             android:id="@+id/etNetworkPayloadInput">
+
+                            <EditText
+                                 android:layout_height="wrap_content"
+                                 android:layout_width="fill_parent"
+                                 android:hint="Payload"
+                                 android:id="@+id/etNetworkPayload" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageButton
+                             android:layout_height="40dp"
+                             android:layout_width="40dp"
+                             android:src="@android:drawable/ic_menu_add"
+                             android:background="@color/transparent"
+                             app:tint="@color/colorAccent"
+                             android:layout_marginStart="5dp"
+                             android:id="@+id/btnPayloadGen" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                         android:layout_height="wrap_content"
+                         android:layout_width="fill_parent"
+                         android:layout_marginBottom="0.0dip"
+                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                         android:layout_marginTop="5dp"
+                         android:id="@+id/TextInputLayout2">
+
+                        <EditText
+                             android:layout_height="wrap_content"
+                             android:layout_width="fill_parent"
+                             android:hint="Network Info"
+                             android:id="@+id/etNetworkInfo" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                         android:layout_height="wrap_content"
+                         android:layout_width="fill_parent"
+                         android:orientation="vertical"
+                         android:id="@+id/excluded_udp_layout">
+
+                        <LinearLayout
+                             android:layout_height="wrap_content"
+                             android:layout_width="fill_parent"
+                             android:orientation="vertical"
+                             android:layout_marginTop="10.0dip">
+
+                            <TextView
+                                 android:layout_height="wrap_content"
+                                 android:layout_width="wrap_content"
+                                 android:layout_marginBottom="3dp"
+                                 android:background="@color/colorAccent"
+                                 android:paddingRight="10dp"
+                                 android:textColor="@color/white"
+                                 android:paddingLeft="10dp"
+                                 android:id="@+id/title4"
+                                 android:text="Proxy Settings" />
+
+                            <LinearLayout
+                                 android:layout_height="wrap_content"
+                                 android:layout_width="fill_parent"
+                                 android:orientation="horizontal">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                     android:layout_height="wrap_content"
+                                     android:layout_width="fill_parent"
+                                     android:layout_marginEnd="2.5dip"
+                                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                     android:layout_weight="1.0"
+                                     android:id="@+id/TextInputLayout3">
+
+                                    <EditText
+                                         android:layout_height="wrap_content"
+                                         android:layout_width="fill_parent"
+                                         android:hint="Squid Proxy/IP"
+                                         android:singleLine="true"
+                                         android:id="@+id/etSquidProxy"
+                                         android:text="[Default]" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                     android:layout_height="wrap_content"
+                                     android:layout_width="fill_parent"
+                                     android:layout_marginLeft="2.5dip"
+                                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                     android:layout_weight="2.0"
+                                     android:id="@+id/TextInputLayout4">
+
+                                    <EditText
+                                         android:layout_height="wrap_content"
+                                         android:layout_width="fill_parent"
+                                         android:hint="Squid Port"
+                                         android:singleLine="true"
+                                         android:inputType="number"
+                                         android:id="@+id/etSquidPort"
+                                         android:text="8080" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                 android:layout_height="wrap_content"
+                                 android:layout_width="fill_parent"
+                                 android:gravity="right"
+                                 android:orientation="horizontal">
+
+                                <CheckBox
+                                     android:layout_height="wrap_content"
+                                     android:layout_width="wrap_content"
+                                     android:layout_marginBottom="5dp"
+                                     android:textColor="@color/colorAccent"
+                                     android:id="@+id/isReplace"
+                                     android:text="AutoReplace" />
+
+                                <CheckBox
+                                     android:layout_height="wrap_content"
+                                     android:layout_width="wrap_content"
+                                     android:layout_marginBottom="5dp"
+                                     android:textColor="@color/colorAccent"
+                                     android:layout_marginLeft="5dip"
+                                     android:id="@+id/ckUseDefProxy"
+                                     android:text="Use Default Proxy" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                             android:layout_height="wrap_content"
+                             android:layout_width="fill_parent"
+                             android:layout_marginBottom="5.0dip"
+                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                             android:layout_marginTop="0.0dip"
+                             android:id="@+id/TextInputLayout5">
+
+                            <EditText
+                                 android:layout_height="wrap_content"
+                                 android:layout_width="fill_parent"
+                                 android:hint="FrontQuery (optional)"
+                                 android:id="@+id/etNetworkFrontQuery" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                             android:layout_height="wrap_content"
+                             android:layout_width="fill_parent"
+                             android:layout_marginBottom="5.0dip"
+                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                             android:id="@+id/TextInputLayout6">
+
+                            <EditText
+                                 android:layout_height="wrap_content"
+                                 android:layout_width="fill_parent"
+                                 android:hint="BackQuery (optional)"
+                                 android:id="@+id/etNetworkBackQuery" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+         android:layout_height="wrap_content"
+         android:layout_width="fill_parent"
+         android:layout_marginBottom="10.0dip"
+         android:gravity="center_vertical"
+         android:layout_alignParentBottom="true">
+
+        <LinearLayout
+             android:layout_height="40dp"
+             android:layout_width="100.0dip"
+             android:layout_centerInParent="true"
+             android:gravity="center"
+             android:padding="10.0dip"
+             android:layout_alignParentStart="true"
+             android:layout_marginStart="10.0dip"
+             android:id="@+id/cancel">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center"
+                 android:textColor="@color/colorPrimary"
+                 android:letterSpacing="0.1"
+                 android:id="@+id/cancel_tv"
+                 android:textStyle="bold"
+                 android:text="Cancel" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+             android:layout_height="40.0dip"
+             android:layout_width="150.0dip"
+             android:layout_centerInParent="true"
+             android:layout_marginEnd="10.0dip"
+             android:background="@drawable/card_frame3"
+             android:layout_alignParentEnd="true"
+             android:id="@+id/save">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:layout_centerInParent="true"
+                 android:gravity="center"
+                 android:textColor="@color/white"
+                 android:letterSpacing="0.1"
+                 android:textStyle="bold"
+                 android:id="@+id/savetv"
+                 android:text="Save" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

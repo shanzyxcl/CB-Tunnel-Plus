@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:gravity="right"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:background="@color/colorAccent"
+        android:id="@+id/color_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/notiftext1"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="18.0dip"
+            android:layout_marginLeft="25.0dip"
+            android:layout_marginTop="30.0dip"
+            android:textColor="@color/white"
+            android:text="Auto Ping" />
+
+        <View
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="?android:dividerVertical" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="20dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="Ping destination (host)"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:id="@+id/destination">
+
+            <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textSize="9.0sp"
+                android:maxLines="10"
+                android:id="@+id/ed_destination" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/destination"
+            android:hint="Ping timeout (seconds)"
+            android:id="@+id/timeout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+            <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:textSize="9.0sp"
+                android:id="@+id/ed_timeout" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/timeout"
+            android:hint="Ping Thread (seconds)"
+            android:id="@+id/thread"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+            <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:textSize="9.0sp"
+                android:id="@+id/ed_thread" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_marginBottom="10.0dip"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10.0dip">
+
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="100.0dip"
+            android:gravity="center"
+            android:padding="10.0dip"
+            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10.0dip"
+            android:id="@+id/appButton0">
+
+            <TextView
+                android:id="@+id/appButton1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Cancel"
+                android:gravity="center"
+                android:letterSpacing="0.1"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_height="40.0dip"
+            android:layout_width="150.0dip"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/card_frame3"
+            android:id="@+id/save">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_centerInParent="true"
+                android:id="@+id/savetv"
+                android:textColor="@color/white"
+                android:letterSpacing="0.1"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="SAVE" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

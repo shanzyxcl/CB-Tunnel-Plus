@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:paddingBottom="10dp"
+    android:layout_weight="1">
+
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="70dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_height="50dp"
+        android:layout_width="fill_parent"
+        android:paddingBottom="2dp"
+        android:gravity="bottom"
+        android:background="@color/colorAccent"
+        android:id="@+id/color_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/notiftext1"
+            android:textSize="18.0sp"
+            android:layout_marginStart="25.0dip"
+            style="@style/TextViewTheme_dark"
+            android:text="Setup manual server" />
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:id="@+id/sName_xp"
+            android:paddingRight="10dp"
+            android:textColor="@color/white"
+            android:paddingLeft="25dp"
+            android:singleLine="true"
+            android:text="Server validity"/>
+    </LinearLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1.0">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent">
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:padding="10.0dip"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/title1"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="3dp"
+                    android:background="@color/colorAccent"
+                    android:paddingLeft="10dp"
+                    android:text="Select protocol" />
+                <Spinner
+                    android:layout_height="40.0dip"
+                    android:layout_width="fill_parent"
+                    android:layout_marginBottom="10.0dip"
+                    android:background="@drawable/bg_spin"
+                    android:entries="@array/server_type"
+                    android:id="@+id/server_sptype">
+
+                </Spinner>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/title2"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="@color/colorAccent"
+                    android:paddingLeft="10dp"
+                    android:text="Select Flag" />
+
+                <Spinner
+                    android:layout_height="40.0dip"
+                    android:layout_width="fill_parent"
+                    android:layout_marginBottom="10.0dip"
+                    android:background="@drawable/bg_spin"
+                    android:id="@+id/flagspin">
+
+                </Spinner>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:id="@+id/TextInputLayout1"
+                    android:layout_marginBottom="5.0dip"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="fill_parent"
+                        android:hint="Server Name"
+                        android:singleLine="true"
+                        android:id="@+id/etServerName" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_marginBottom="5.0dip"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:id="@+id/etServerIP_ly">
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="fill_parent"
+                        android:hint="Server IP/Host (cf)"
+                        tools:ignore="TouchTargetSizeCheck"
+                        android:id="@+id/etServerIP" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_marginBottom="5.0dip"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:id="@+id/etServerCloudFront_ly">
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="fill_parent"
+                        android:hint="Cloud Front DNS (ws)"
+                        tools:ignore="TouchTargetSizeCheck"
+                        android:id="@+id/etServerCloudFront" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/http_ly">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="fill_parent"
+                        android:layout_marginBottom="5.0dip"
+                        android:id="@+id/TextInputLayout2"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                        <EditText
+                            android:layout_height="wrap_content"
+                            android:layout_width="fill_parent"
+                            android:hint="HTTP Server (http)"
+                            android:singleLine="true"
+                            android:id="@+id/etServerHTTP" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/title3"
+                        android:paddingRight="10dp"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="@color/colorAccent"
+                        android:paddingLeft="10dp"
+                        android:text="Server Port" />
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="fill_parent"
+                        android:layout_marginBottom="5.0dip"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:id="@+id/etTcpPort_ly">
+
+                            <EditText
+                                android:layout_height="wrap_content"
+                                android:layout_width="fill_parent"
+                                android:textSize="10sp"
+                                android:hint="TCP:UDP"
+                                android:singleLine="true"
+                                android:text="1194:53"
+                                android:id="@+id/etTcpPort" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:id="@+id/etSSLPort_ly">
+
+                            <EditText
+                                android:layout_height="wrap_content"
+                                android:layout_width="fill_parent"
+                                android:textSize="10sp"
+                                android:hint="SSL"
+                                android:singleLine="true"
+                                android:id="@+id/etSSLPort"
+                                android:text="443" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="fill_parent"
+                        android:id="@+id/etServerProxyLay"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="5.0dip">
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:id="@+id/title4"
+                            android:paddingRight="10dp"
+                            android:textColor="@color/white"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/colorAccent"
+                            android:paddingLeft="10dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="Server Proxy Setting" />
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="fill_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_height="wrap_content"
+                                android:layout_width="fill_parent"
+                                android:id="@+id/etServerProxyHost_ly"
+                                android:layout_marginRight="5dp"
+                                android:layout_weight="1"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                                <EditText
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="fill_parent"
+                                    android:hint="Server Proxy(host)"
+                                    android:singleLine="true"
+                                    android:id="@+id/etServerProxyHost" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_height="wrap_content"
+                                android:layout_width="fill_parent"
+                                android:id="@+id/etServerProxyPort_ly"
+                                android:layout_weight="2"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                                <EditText
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="fill_parent"
+                                    android:hint="Server Proxy(Port)"
+                                    android:singleLine="true"
+                                    android:id="@+id/etServerProxyPort" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/title5"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="@color/colorAccent"
+                    android:paddingLeft="10dp"
+                    android:text="Category" />
+                <Spinner
+                    android:layout_height="40.0dip"
+                    android:layout_width="fill_parent"
+                    android:background="@drawable/bg_spin"
+                    android:entries="@array/server_category"
+                    android:id="@+id/categorySpinner">
+
+                </Spinner>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/colorAccent"
+                        android:id="@+id/ckUseLogin"
+                        android:text="Use Auto Login" />
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/colorAccent"
+                        android:id="@+id/ckMultiCert"
+                        android:text="Use multi cert" />
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/colorAccent"
+                        android:id="@+id/server_xp"
+                        android:text="Validity Date" />
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:id="@+id/server_web_renew_lay"
+                    android:visibility="gone"
+                    android:layout_marginBottom="5.0dip"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="fill_parent"
+                        android:hint="(Renew) Server/Panel Url"
+                        android:text="www.vpnjantit.com"
+                        android:maxHeight="100dp"
+                        android:id="@+id/server_web_renew" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:visibility="gone"
+                    android:layout_marginBottom="5.0dip"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:id="@+id/etCertificate_ly">
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="fill_parent"
+                        android:hint="Certificate"
+                        android:textSize="9sp"
+                        android:scrollbars="vertical"
+                        android:maxLines="20"
+                        android:id="@+id/etCertificate" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:id="@+id/Account_ly">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="fill_parent"
+                        android:id="@+id/TextInputLayout3"
+                        android:layout_marginBottom="5.0dip"
+                        android:layout_marginRight="5dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:layout_height="wrap_content"
+                            android:layout_width="fill_parent"
+                            android:hint="Username"
+                            android:singleLine="true"
+                            android:id="@+id/etUser" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="fill_parent"
+                        android:id="@+id/TextInputLayout4"
+                        android:layout_marginLeft="5dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:layout_height="wrap_content"
+                            android:layout_width="fill_parent"
+                            android:hint="Password"
+                            android:singleLine="true"
+                            android:id="@+id/etPass" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</LinearLayout>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10.0dip"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="100.0dip"
+            android:id="@+id/cancel"
+            android:gravity="center"
+            android:padding="10.0dip"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10.0dip">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textColor="@color/colorPrimary"
+                android:letterSpacing="0.1"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="Cancel"
+                android:id="@+id/cancel_tv"  />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_height="40.0dip"
+            android:layout_width="150.0dip"
+            android:layout_marginRight="10.0dip"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/card_frame3"
+            android:id="@+id/save">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textColor="@color/white"
+                android:layout_centerInParent="true"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                android:gravity="center"
+                android:id="@+id/savetv"
+                android:text="Save" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

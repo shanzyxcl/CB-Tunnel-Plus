@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0.0dip"
+                    android:layout_marginBottom="20.0dip"
+                    android:layout_marginStart="20.0dip"
+                    android:layout_marginEnd="20.0dip">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/tweak_icon"
+                        android:background="@drawable/circle_bg_account"
+                        android:padding="5.0dip"
+                        android:layout_width="50.0dip"
+                        android:layout_height="50.0dip"
+                        android:contentDescription="@string/app_name"
+                        android:layout_marginEnd="8.0dip"
+                        app:srcCompat="@drawable/icon_icon" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:textSize="14.0sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_text_light"
+                        android:gravity="center_vertical"
+                        android:id="@+id/tweak_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UdpResolver"
+                        android:lines="1"
+                        android:textAllCaps="true" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <ScrollView
+                    android:scrollbars="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20.0dip"
+                        android:layout_marginStart="10.0dip"
+                        android:layout_marginEnd="10.0dip">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:paddingLeft="5.0dip"
+                            android:paddingRight="5.0dip"
+                            android:visibility="visible"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20.0dip"
+                            android:hint="UdpResolver">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:enabled="true"
+                                android:textColor="@color/colorText"
+                                android:id="@+id/custom_udpresolver"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:layout_alignParentStart="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </RelativeLayout>
+                </ScrollView>
+
+                <RelativeLayout
+                    android:gravity="center_vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:padding="5.0dip"
+                        android:layout_width="100.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10.0dip"
+                        android:layout_marginStart="10.0dip">
+
+                        <TextView
+                            android:textColor="@color/colorText"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0.1" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/dns_button"
+                        android:padding="10.0dip"
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true">
+
+                        <TextView
+                            android:textSize="14.0sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:id="@+id/update_udp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Update"
+                            android:layout_marginStart="50.0dip"
+                            android:layout_alignParentEnd="true"
+                            style="@style/PositiveButtonStyle" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

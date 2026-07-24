@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:layout_weight="1.0">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_height="55dp"
+        android:layout_width="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_main"
+            android:theme="@style/ToolbarTheme"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:minHeight="?attr/actionBarSize"
+            app:titleTextAppearance="@style/ToolbarTitleTheme"
+            app:subtitleTextAppearance="@style/ToolbarSubtitleTheme" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:paddingBottom="10dp"
+        android:layout_weight="1.0">
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:id="@+id/advancesettingsLinearLayout1">
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:background="@drawable/setting_bg"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/set1">
+
+                    <RelativeLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:id="@+id/ed_ly0">
+
+                            <EditText
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:inputType="number"
+                                android:hint="Reconnecting Thread (seconds)"
+                                android:text="5"
+                                android:id="@+id/con_time_ed" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <CheckBox
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:visibility="gone"
+                            android:id="@+id/check1" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/setting_bg"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:onClick="onClick"
+                    android:orientation="horizontal"
+                    tools:ignore="OnClick"
+                    android:id="@+id/set2">
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1.0">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:textSize="12sp"
+                            android:text="Data compression"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="10sp"
+                            android:text="Tunnel compression options" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:id="@+id/check2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/setting_bg"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:onClick="onClick"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="OnClick"
+                    android:id="@+id/set3">
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1.0">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="12sp"
+                            android:text="@string/title_tethering_subnet"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="10sp"
+                            android:text="@string/summary_tethering_subnet" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:gravity="center"
+                        android:id="@+id/check3" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/setting_bg"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:onClick="onClick"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="OnClick"
+                    android:id="@+id/set4">
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1.0">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="12sp"
+                            android:text="@string/pause_vpn_on_blanked_screen_title"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="10sp"
+                            android:text="@string/pause_vpn_on_blanked_screen_summary" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:gravity="center"
+                        android:id="@+id/check4" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/setting_bg"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:onClick="onClick"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="OnClick"
+                    android:id="@+id/set5">
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1.0">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="12sp"
+                            android:text="@string/title_auto_clear_log"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:gravity="center"
+                        android:id="@+id/check5" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/setting_bg"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:onClick="onClick"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="OnClick"
+                    android:id="@+id/set6">
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1.0">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="12sp"
+                            android:text="@string/title_disable_delay_ssh"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="10sp"
+                            android:text="@string/summary_disable_delay_ssh" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:gravity="center"
+                        android:id="@+id/check6" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/setting_bg"
+                    android:id="@+id/mBufferSize"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:gravity="center|left"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="12sp"
+                            android:text="Buffer Size"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center|left">
+
+                            <TextView
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:id="@+id/bufSend"
+                                android:textSize="12sp"
+                                android:text="Send: 16384" />
+
+                            <View
+                                android:layout_height="5dp"
+                                android:layout_width="2dp"
+                                android:layout_margin="10dp"
+                                android:background="@color/grey_500"/>
+
+                            <TextView
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:id="@+id/bufReceive"
+                                android:textSize="12sp"
+                                android:text="Receive: 32768" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:background="@drawable/setting_bg"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:onClick="onClick"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="OnClick"
+                    android:id="@+id/set7">
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="12sp"
+                            android:text="@string/title_number_max_threads"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="10sp"
+                            android:text="@string/summary_number_max_threads" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:visibility="gone"
+                        android:background="@drawable/setting_bg"
+                        android:orientation="vertical"
+                        android:id="@+id/mx_thread_lay">
+
+                        <RadioGroup
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:orientation="vertical"
+                            android:id="@+id/rGroup">
+
+                            <RadioButton
+                                android:layout_height="wrap_content"
+                                android:layout_width="fill_parent"
+                                android:textSize="12sp"
+                                android:id="@+id/rbt1"
+                                android:text="2 (minimum)" />
+
+                            <RadioButton
+                                android:layout_height="wrap_content"
+                                android:layout_width="fill_parent"
+                                android:textSize="12sp"
+                                android:id="@+id/rbt2"
+                                android:text="8 (pattern)" />
+
+                            <RadioButton
+                                android:layout_height="wrap_content"
+                                android:layout_width="fill_parent"
+                                android:textSize="12sp"
+                                android:id="@+id/rbt3"
+                                android:text="15 (medium)" />
+
+                            <RadioButton
+                                android:layout_height="wrap_content"
+                                android:layout_width="fill_parent"
+                                android:textSize="12sp"
+                                android:id="@+id/rbt4"
+                                android:text="25 (maximum)" />
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_height="1dp"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:background="?android:attr/dividerVertical"
+                    android:layout_marginTop="15dp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="5dp"
+                    android:text="Additional setting" />
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:background="@drawable/setting_bg"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:onClick="onClick"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="OnClick"
+                    android:id="@+id/set8">
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="12sp"
+                            android:text="Night mode"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="10sp"
+                            android:id="@+id/isNight"
+                            android:text="Deactivate" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:visibility="gone"
+                        android:background="@drawable/setting_bg"
+                        android:orientation="vertical"
+                        android:id="@+id/Theme_check_lay">
+
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:textSize="12sp"
+                                android:id="@+id/theme0"
+                                android:text="Automatic" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_height="1dp"
+                            android:layout_width="match_parent"
+                            android:background="?android:attr/dividerVertical" />
+
+                        <CheckBox
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="12sp"
+                            android:id="@+id/theme1"
+                            android:text="Active" />
+
+                        <View
+                            android:layout_height="1dp"
+                            android:layout_width="match_parent"
+                            android:background="?android:attr/dividerVertical" />
+
+                        <CheckBox
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="12sp"
+                            android:id="@+id/theme2"
+                            android:text="Deactivate" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:background="@drawable/setting_bg"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:onClick="onClick"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="OnClick"
+                    android:id="@+id/set9">
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1.0">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="12sp"
+                            android:text="SSH Payload Generator"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:background="@drawable/setting_bg"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:onClick="onClick"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="OnClick"
+                    android:id="@+id/set10">
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1.0">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="12sp"
+                            android:text="IP Hunter"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:background="@drawable/setting_bg"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:onClick="onClick"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="OnClick"
+                    android:id="@+id/set11">
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1.0">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="12sp"
+                            android:text="Host Checker"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="15sp"
+                        android:id="@+id/advancesettingsTextView1"
+                        android:text="Advance settings" />
+
+                    <include layout="@layout/more_set" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

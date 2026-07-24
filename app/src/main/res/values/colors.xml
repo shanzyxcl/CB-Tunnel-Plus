@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorBG">#fff5f5f5</color>
+    <color name="colorText">#ff232323</color>
+    <color name="text_color">#ff000000</color>
+    <color name="shapeEnd">#ffcfd8dc</color>
+    <color name="primary_color">#ffcfd3d6</color>
+    <color name="neomorph_background_color">#031442</color>
+    <color name="neomorph_shadow_color">#DDD9DE</color>
+    <color name="neomorph_highlight_color">#031442</color>
+    <color name="background_color">#fff5f5f5</color>
+    <color name="color_text_light">#ff232323</color>
+    <color name="connect_color">#ff66bb6a</color>
+    <color name="nana">#ff232323</color>
+
+ <!--Change color here-->
+    <color name="colorPrimary">#CD5C5C</color>
+    <color name="colorPrimaryDark">#CD5C5C</color>
+    <color name="colorAccent">#CD5C5C</color>
+    
+    <!--- END HERE-->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey_800">#252525</color>
+    <color name="black_light">#333333</color>
+    <color name="grey_500">#818181</color>
+    <color name="dataIn">#FF00FF6A</color>
+    <color name="dataOut">#D51212</color>
+    <color name="transparent">#00000000</color>
+    <color name="white_light">#f5f5f5</color>
+    <color name="hint_d">#616161</color>
+    <color name="hint_l">#CBCBCB</color>
+    <color name="transparent1">#4f7a7a7a</color>
+    <color name="transparent2">#9c7a7a7a</color>
+    <color name="windowBackground_light">#FFFFFF</color>
+    <color name="windowBackground_dark">#171717</color>
+    <color name="switch_light">#4D354653</color>
+    <color name="flag_iv_color_dark">#212121</color>
+    <color name="flag_iv_color_light">#EFEFEF</color>
+    <color name="window_nav_light">#E8E8E8</color>
+    <color name="prog_light">#E8E8E8</color>
+    <color name="prog_dark">#333333</color>
+    <color name="prog_trans_light">#9F919191</color>
+    <color name="prog_trans_dark">#A4333333</color>
+</resources>

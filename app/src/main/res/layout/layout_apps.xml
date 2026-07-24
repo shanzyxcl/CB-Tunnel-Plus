@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:layout_weight="1"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_height="55dp"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:id="@+id/l1">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_main"
+            android:theme="@style/ToolbarTheme"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:minHeight="?attr/actionBarSize"
+            app:titleTextAppearance="@style/ToolbarTitleTheme"
+            app:subtitleTextAppearance="@style/ToolbarSubtitleTheme" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/l2"
+        android:layout_below="@id/l1"
+        android:background="@color/transparent1">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:gravity="center"
+                android:padding="10.0dip">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center|left"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/fragmentallowedappTextView1" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:id="@+id/fragmentallowedappSwitch1" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:gravity="center"
+                android:padding="10.0dip">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center|left"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/fragmentallowedappTextView2" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:id="@+id/fragmentallowedappSwitch2" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:id="@+id/l3"
+        android:layout_below="@id/l2">
+
+        <ListView
+            android:layout_height="match_parent"
+            android:layout_width="fill_parent"
+            tools:ignore="DuplicateClickableBoundsCheck"
+            android:id="@+id/applistview">
+
+        </ListView>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:padding="10dp"
+            android:textSize="50sp"
+            android:textColor="#ffffff"
+            android:id="@+id/layoutappsOverLay" />
+
+        <Button
+            android:layout_height="match_parent"
+            android:layout_width="fill_parent"
+            android:background="#60000000"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:id="@+id/fragmentallowedappButton1" />
+
+    </RelativeLayout>
+
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" layout="@layout/progdialog" />
+
+</RelativeLayout>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/contain">
+
+    <LinearLayout
+        android:layout_height="50dp"
+        android:layout_width="fill_parent"
+        android:gravity="bottom"
+        android:background="@color/colorAccent"
+        android:id="@+id/color_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/gen_title"
+            android:textSize="18.0sp"
+            android:layout_marginStart="25.0dip"
+            android:layout_marginBottom="2dp"
+            style="@style/TextViewTheme_dark"
+            android:text="UDP Generator" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_height="2dp"
+        android:layout_width="match_parent"
+        android:background="@color/black_light" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="10.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/TextInputLayout1"
+                android:layout_marginBottom="5.0dip">
+
+                <EditText
+                    android:id="@+id/etUDPPort"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorAccent"
+                    android:autofillHints="Retry Interval"
+                    android:hint="UDP Port (Ex: 10000-50000)"
+                    android:singleLine="true"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/TextInputLayout2"
+                android:layout_marginBottom="5.0dip">
+
+                <EditText
+                    android:id="@+id/etServerObfs"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="obfs"
+                    android:singleLine="true"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/TextInputLayout3"
+                android:layout_marginBottom="5.0dip">
+
+                <EditText
+                    android:id="@+id/etRetry"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:hint="Retry"
+                    android:textColorHint="@color/colorAccent"
+                    android:singleLine="true"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/TextInputLayout4"
+                android:layout_marginBottom="5.0dip">
+
+                <EditText
+                    android:id="@+id/etRetryInterval"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="Retry Interval"
+                    android:text="1"
+                    android:hint="Retry Interval"
+                    android:singleLine="true"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/TextInputLayout5"
+                android:layout_marginBottom="5.0dip">
+
+                <EditText
+                    android:id="@+id/etServerUpMBPS"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:hint="Up Mbps"
+                    android:singleLine="true"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/TextInputLayout6"
+                android:layout_marginBottom="5.0dip">
+
+                <EditText
+                    android:id="@+id/etServerDownMBPS"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:hint="Down Mbps"
+                    android:singleLine="true"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/TextInputLayout7"
+                android:layout_marginBottom="5.0dip">
+
+                <EditText
+                    android:id="@+id/etServerRWConn"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="196608"
+                    android:hint="Recv Window Conn"
+                    android:singleLine="true"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/TextInputLayout8"
+                android:layout_marginBottom="5.0dip">
+
+                <EditText
+                    android:id="@+id/etServerRW"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="491520"
+                    android:hint="Recv Window"
+                    android:singleLine="true"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20.0dip">
+
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="100.0dip"
+            android:id="@+id/cancel"
+            android:gravity="center"
+            android:padding="10.0dip"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10.0dip">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textColor="@color/colorPrimary"
+                android:letterSpacing="0.1"
+                android:gravity="center"
+                android:id="@+id/cancel_tv"
+                android:textStyle="bold"
+                android:text="Cancel" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_height="40.0dip"
+            android:layout_width="150.0dip"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/card_frame3"
+            android:id="@+id/generate">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_centerInParent="true"
+                android:id="@+id/generatetv"
+                android:textColor="@color/white"
+                android:letterSpacing="0.1"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="Generate" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

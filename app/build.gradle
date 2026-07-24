@@ -1,0 +1,97 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+}
+
+android {
+    namespace = "com.cbtunnel.plus"
+    compileSdk 34
+    buildToolsVersion = '34.0.4'
+    
+    defaultConfig {
+        applicationId "com.cbtunnel.plus"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0 Test Version"
+        setProperty("archivesBaseName", "$applicationId-$versionName")
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+    }
+    
+    signingConfigs {
+        release {
+            keyAlias 'Cb_Tunnel_Plus_#2025'
+            keyPassword 'Cb_Tunnel_Plus_#2025'
+            storeFile file('cb_tunnel.jks')
+            storePassword 'Cb_Tunnel_Plus_#2025'
+            v1SigningEnabled true
+            v2SigningEnabled true
+            enableV3Signing = true
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug{
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17
+    }
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+
+        doNotStrip += ["**/libgojni.so",
+                       "**/libh1.so",
+                       "**/libh2.so",
+                       "**/libh3.so",
+                       "**/libmmkv.so",
+                       "**/libovpncli.so",
+                       "**/libpdnsd.so",
+                       "**/libtun2socks.so"]
+    }
+    lint {
+        disable("MissingTranslation")
+        abortOnError = true
+        checkAllWarnings = false
+        checkDependencies = false
+        checkReleaseBuilds = false
+        ignoreWarnings = false
+        quiet = true
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation "com.google.android.material:material:1.12.0"
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.tencent:mmkv-static:1.3.9'
+    implementation 'com.google.code.gson:gson:2.11.0'
+    implementation 'com.google.zxing:core:3.5.3'
+    implementation 'io.reactivex:rxjava:1.3.8'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'androidx.preference:preference-ktx:1.2.1'
+    implementation 'junit:junit:4.13.2'
+    implementation 'com.airbnb.android:lottie:6.6.0'
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.8.7"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.8.7"
+    implementation 'com.google.android.gms:play-services-ads:23.6.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    //App Update
+    implementation 'com.google.android.play:app-update:2.1.0'
+}

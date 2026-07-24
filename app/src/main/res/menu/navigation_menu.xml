@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/cogs"
+        android:id="@+id/options"
+        android:title="@string/settings" />
+   <item
+        android:icon="@drawable/ic_playstore"
+        android:id="@+id/item_app"
+        android:visible="false"
+        android:title="Application link" />
+    <item
+        android:icon="@drawable/ic_update"
+        android:id="@+id/item_checkupdates"
+        android:title="Check updates" />
+   <item
+        android:icon="@drawable/ic_file_normal"
+        android:id="@+id/item_paste"
+        android:visible="false"
+        android:title="Paste Config" />
+    <item
+        android:icon="@drawable/ic_file_import"
+        android:id="@+id/item_im"
+        android:title="Import" />
+        
+    <item
+        android:icon="@drawable/ic_telegram"
+        android:id="@+id/item_tg"
+        android:title="Telegram Channel" />
+</menu>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="wrap_content"
+     android:layout_width="fill_parent"
+     android:orientation="vertical">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="fill_parent"
+         android:background="@color/colorAccent"
+         android:orientation="vertical"
+         android:id="@+id/color_bg">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+            android:id="@+id/notiftext1"
+             android:textAppearance="?android:textAppearanceMedium"
+             android:textSize="18.0dip"
+             android:layout_marginLeft="25.0dip"
+             style="@style/TextViewTheme_dark"
+             android:layout_marginTop="30.0dip"
+             android:text="CB Tunnel Plus TYPE" />
+
+        <View
+             android:layout_height="1dp"
+             android:layout_width="match_parent"
+             android:background="?android:dividerVertical" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+         android:layout_height="wrap_content"
+         android:layout_width="fill_parent">
+
+        <RadioGroup
+             android:layout_height="wrap_content"
+             android:layout_width="fill_parent"
+             android:gravity="center"
+             android:layout_margin="20dp"
+             android:orientation="vertical"
+             android:id="@+id/dialog_tunnel_radio">
+
+            <RadioButton
+                 android:layout_height="wrap_content"
+                 android:layout_width="fill_parent"
+                 android:layout_marginBottom="10dp"
+                 android:background="@drawable/card_frame"
+                 android:textSize="10dp"
+                 android:checked="true"
+                 android:id="@+id/type_ovpn"
+                 android:text="OpenVPN (OVPN)"
+                 android:textStyle="bold" />
+
+            <RadioButton
+                 android:layout_height="wrap_content"
+                 android:layout_width="fill_parent"
+                 android:layout_marginBottom="10dp"
+                 android:background="@drawable/card_frame"
+                 android:textSize="10dp"
+                 android:id="@+id/type_udp"
+                 android:text="Hysteria (UDP)"
+                 android:textStyle="bold" />
+
+            <RadioButton
+                 android:layout_height="wrap_content"
+                 android:layout_width="fill_parent"
+                 android:layout_marginBottom="10dp"
+                 android:background="@drawable/card_frame"
+                 android:textSize="10dp"
+                 android:id="@+id/type_ssh"
+                 android:text="Secure Shell (SSH)"
+                 android:textStyle="bold" />
+
+            <RadioButton
+                 android:layout_height="wrap_content"
+                 android:layout_width="fill_parent"
+                 android:layout_marginBottom="10dp"
+                 android:background="@drawable/card_frame"
+                 android:textSize="10dp"
+                 android:id="@+id/type_dns"
+                 android:text="DNS (DNSTT)"
+                 android:textStyle="bold" />
+
+            <RadioButton
+                 android:layout_height="wrap_content"
+                 android:layout_width="fill_parent"
+                 android:background="@drawable/card_frame"
+                 android:textSize="10dp"
+                 android:id="@+id/type_v2ray"
+                 android:text="V2Ray/Xray"
+                 android:textStyle="bold" />
+
+        </RadioGroup>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+         android:layout_height="10dp"
+         android:layout_width="match_parent"
+         android:background="@color/colorAccent"
+         android:id="@+id/color_bg2" />
+
+</LinearLayout>
