@@ -96,9 +96,9 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.version.outputs.name }}
-          name: NxVPN v${{ steps.version.outputs.name }}
+          name: CB-Tunnel v${{ steps.version.outputs.name }}
           body: |
-            ## NxVPN v${{ steps.version.outputs.name }}
+            ## CB-Tunnel v${{ steps.version.outputs.name }}
             🔖 Commit: `${{ github.sha }}`
             📋 ${{ github.event.head_commit.message }}
           files: app/build/outputs/apk/release/*.apk
