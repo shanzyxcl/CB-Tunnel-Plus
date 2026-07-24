@@ -5,13 +5,12 @@ plugins {
 
 android {
     namespace = "com.cbtunnel.plus"
-    compileSdk 34
-    buildToolsVersion = '34.0.4'
+    compileSdk 36
     
     defaultConfig {
         applicationId "com.cbtunnel.plus"
         minSdk 21
-        targetSdk 34
+        targetSdk 36
         versionCode 1
         versionName "1.0 Test Version"
         setProperty("archivesBaseName", "$applicationId-$versionName")
