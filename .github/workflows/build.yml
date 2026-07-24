@@ -1,0 +1,106 @@
+name: Build Release APK
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        required: false
+        type: string
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build Release APK
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: 17
+
+      - name: Setup NDK
+        uses: nttld/setup-ndk@v1
+        id: setup-ndk
+        with:
+          add-to-path: false
+          ndk-version: r27
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Set Gradle JVM args
+        run: echo "org.gradle.jvmargs=-Xmx4g -XX:MaxMetaspaceSize=512m" >> gradle.properties
+
+      - name: Clean Project
+        run: ./gradlew clean
+
+      - name: Build APK
+        run: ./gradlew assembleRelease
+
+      - name: Get Version Name
+        id: version
+        run: |
+          # Jika release_tag di-input manual via workflow_dispatch, gunakan itu
+          if [ -n "${{ github.event.inputs.release_tag }}" ]; then
+            VERSION="${{ github.event.inputs.release_tag }}"
+            echo "Menggunakan tag manual: $VERSION"
+          else
+            # Coba ekstrak dari double quote: versionName "x.x.x"
+            VERSION=$(grep 'versionName' app/build.gradle | head -1 \
+              | sed -n 's/.*versionName[[:space:]]*"\([^"]*\)".*/\1/p')
+
+            # Fallback: coba single quote: versionName 'x.x.x'
+            if [ -z "$VERSION" ]; then
+              VERSION=$(grep 'versionName' app/build.gradle | head -1 \
+                | sed -n "s/.*versionName[[:space:]]*'\\([^']*\\)'.*/\\1/p")
+            fi
+
+            # Fallback: coba Kotlin DSL (build.gradle.kts): versionName = "x.x.x"
+            if [ -z "$VERSION" ] && [ -f "app/build.gradle.kts" ]; then
+              VERSION=$(grep 'versionName' app/build.gradle.kts | head -1 \
+                | sed -n 's/.*versionName[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p')
+            fi
+          fi
+
+          # Validasi: gagalkan job jika version masih kosong
+          if [ -z "$VERSION" ]; then
+            echo "::error::Tidak dapat mengekstrak versionName dari build.gradle!"
+            echo "--- Isi baris versionName ---"
+            grep 'versionName' app/build.gradle || echo "(tidak ada baris versionName)"
+            exit 1
+          fi
+
+          echo "Versi terdeteksi: $VERSION"
+          echo "name=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Upload to GitHub Release
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.name }}
+          name: NxVPN v${{ steps.version.outputs.name }}
+          body: |
+            ## NxVPN v${{ steps.version.outputs.name }}
+            🔖 Commit: `${{ github.sha }}`
+            📋 ${{ github.event.head_commit.message }}
+          files: app/build/outputs/apk/release/*.apk
+          draft: false
+          prerelease: false
