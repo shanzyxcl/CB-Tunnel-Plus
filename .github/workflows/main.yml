@@ -1,13 +1,17 @@
 name: Build Release APK
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
+ workflow_dispatch: 
+  inputs:
+    release_tag:
+      required: false
+      type: string
+ pull_request:
+   branches:
+     - main
+ push:
+  branches:
+    - main
 
 jobs:
   build:
